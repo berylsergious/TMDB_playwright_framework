@@ -1,24 +1,11 @@
-import { test as base } from '@playwright/test';
-import { HomePage } from '../../ui/pages/HomePage';
-import { LoginPage } from '../../ui/pages/loginPage';
+import { mergeTests } from '@playwright/test';
+import { test as pageFixtures } from './page-fixtures';
+import { test as authFixtures } from './auth-fixtures';
 
 
-type MyFixtures = {
-  loginPage: LoginPage;
-  homePage: HomePage;
-  
-};
-
-export const test = base.extend<MyFixtures>({
-  loginPage: async ({ page }, use) => {
-    await use(new LoginPage(page));
-  },
-
-  homePage: async ({ page }, use) => {
-    await use(new HomePage(page));
-  }
-
-  
-});
+export const test = mergeTests(
+  pageFixtures,
+  authFixtures
+);
 
 export { expect } from '@playwright/test';
