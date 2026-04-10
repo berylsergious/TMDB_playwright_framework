@@ -5,16 +5,17 @@ import { NEGATIVE_LOGIN_DATA, AUTH_DATA } from "../../src/testdata/uiTestDataFac
 
 test.describe("Login Functionality", () => {
 
-    // Positive test case for successful login
-    test("Successful login with valid credentials", async ({loginPage}) => {
+    // Positive test case for successful login       
+    test("Successful login with valid credentials", async ({loginPage, myProfilePage}) => {
+        
+        // 1. Wait for the network to settle
+        await loginPage.waitForPageLoad();
         await loginPage.navigate();
         await loginPage.login(AUTH_DATA.username, AUTH_DATA.password);
 
-        // Add assertions to verify successful login, e.g., check for user profile visibility
-        // 1. Wait for the network to settle
-         await loginPage.waitForPageLoad(); 
-    
-        
+       // Add assertions to verify
+        await myProfilePage.waitForPageLoad();
+        await expect(myProfilePage.pageMemberDetail).toBeVisible();
     });
 
 
@@ -24,6 +25,8 @@ test.describe("Login Functionality", () => {
         await loginPage.navigate();
         await loginPage.login(data.username, data.password);
         // Add assertions to verify error message is displayed, e.g., check for error notification
+
+        
     });
     }
 

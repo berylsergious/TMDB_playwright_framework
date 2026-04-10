@@ -14,6 +14,8 @@ export class LoginPage extends BasePage {
     private readonly passwordInput = this.page.getByLabel("password");
     private readonly loginButton = this.page.getByRole("button", { name: "Login" });
     
+
+    
     //Constructor
     constructor( page: Page) {
          super(page); 

@@ -4,7 +4,7 @@ import { HeaderComponent } from "../components/HeaderComponent";
 export abstract class BasePage {
 
 protected readonly page: Page;
-protected readonly header: HeaderComponent;
+readonly header: HeaderComponent;
 
 constructor( page: Page) {
     this.page =page;
