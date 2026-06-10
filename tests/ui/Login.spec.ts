@@ -9,13 +9,14 @@ test.describe("Login Functionality", () => {
     test("Successful login with valid credentials", async ({loginPage, myProfilePage}) => {
         
         // 1. Wait for the network to settle
-        await loginPage.waitForPageLoad();
         await loginPage.navigate();
+        await loginPage.waitForPageLoad();
         await loginPage.login(AUTH_DATA.username, AUTH_DATA.password);
 
        // Add assertions to verify
         await myProfilePage.waitForPageLoad();
-        await expect(myProfilePage.pageMemberDetail).toBeVisible();
+        await myProfilePage.verifyUserProfileLoaded();
+       
     });
 
 

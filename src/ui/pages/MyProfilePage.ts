@@ -4,7 +4,7 @@ import { ROUTES } from "../../core/constants/routes";
 
 export class MyProfilePage extends BasePage {
 
-    readonly pageMemberDetail = this.page.getByText('Member since April 2025');
+    
     
 
     constructor(page: Page) {
@@ -14,7 +14,9 @@ export class MyProfilePage extends BasePage {
     async navigate(): Promise<void> {
         await this.page.goto(ROUTES.USER_PROFILE);
     }
-
+    async verifyUserProfileLoaded(): Promise<void> {
+    await expect(this.page).toHaveURL(/\/u\/SentinalSergious/);
+}
     
 
     
