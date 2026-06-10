@@ -2,14 +2,19 @@
   "name": "tmdb_playwright_framework",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+
+
+    
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.6.0"
+    "@types/node": "^25.9.2",
+    "typescript": "^6.0.3"
   },
   "dependencies": {
     "dotenv": "^17.3.1"
