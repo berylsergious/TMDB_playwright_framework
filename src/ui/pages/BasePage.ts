@@ -15,6 +15,10 @@ async waitForPageLoad(): Promise<void> {
     await this.page.waitForLoadState("networkidle");
 }
 
+public getPage(): Page {
+    return this.page;
+}
+
 
 
 }

@@ -14,6 +14,7 @@ export class MyProfilePage extends BasePage {
     async navigate(): Promise<void> {
         await this.page.goto(ROUTES.USER_PROFILE);
     }
+    
     async verifyUserProfileLoaded(): Promise<void> {
     await expect(this.page).toHaveURL(/\/u\/SentinalSergious/);
 }

@@ -1,5 +1,5 @@
-import {test, expect } from "../../src/core/fixtures/test-fixtures";
-import { NEGATIVE_LOGIN_DATA, AUTH_DATA } from "../../src/testdata/uiTestDataFactory";
+import {test } from "../../../src/core/fixtures/test-fixtures";
+import { NEGATIVE_LOGIN_DATA, AUTH_DATA } from "../../../src/testdata/uiTestDataFactory";
 
 
 
