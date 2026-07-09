@@ -33,10 +33,10 @@ test.describe("Search Functionality", () => {
         await myProfilePage.waitForPageLoad();
         await myProfilePage.header.search("Inception"); 
 
+        
         await ReportUtil.attachScreenshot(
         myProfilePage.getPage(),
-        testInfo,
-        "Movie Search Results"
+        testInfo,"Movie Search Results"
         );
 
     });
@@ -51,8 +51,7 @@ test.describe("Search Functionality", () => {
         
         await ReportUtil.attachScreenshot(
         myProfilePage.getPage(),
-        testInfo,
-        "TV Show Search Results"
+        testInfo,"TV Show Search Results"
         );
     });
 
